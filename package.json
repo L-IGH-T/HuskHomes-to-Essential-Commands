@@ -1,0 +1,25 @@
+{
+  "name": "huskhomes-to-essentialcommands",
+  "version": "1.0.0",
+  "description": "Convert HuskHomes data to Essential-Commands mod",
+  "bin": {
+    "Converter": "bin/cli.js"
+  },
+  "scripts": {
+    "start":"node bin/cli.js"
+  },
+  "author": "L-IGH-T",
+  "keywords": [
+    "cli",
+    "HuskHomes",
+    "Essential-Commands",
+    "Converter"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "deasync": "^0.1.29",
+    "nbt": "^0.8.1",
+    "prompt-sync": "^4.2.0",
+    "sqlite3": "^5.1.7"
+  }
+}
