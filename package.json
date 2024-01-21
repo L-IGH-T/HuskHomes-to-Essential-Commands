@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Convert HuskHomes data to Essential-Commands mod",
   "bin": {
-    "Converter": "bin/cli.js"
+    "huskhomes-to-essentialcommands": "bin/cli.js"
   },
   "scripts": {
     "start":"node bin/cli.js"
