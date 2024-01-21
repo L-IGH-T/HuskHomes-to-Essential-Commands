@@ -53,7 +53,8 @@ Data.Players.map((e)=>{
 })
 function saveFilePlayer(player)
 {
-    let rootDir = path.join(__dirname,"./out"),
+    let currentPath = process.cwd(),
+        rootDir = path.join(currentPath,"./out"),
         dataDir = path.join(rootDir,"/modplayerdata")
     if (!existsSync(rootDir)){
         mkdirSync(rootDir);
@@ -79,7 +80,8 @@ function saveFilePlayer(player)
 saveFileWorld(Data.World)
 function saveFileWorld(world)
 {
-    let rootDir = path.join(__dirname,"./out"),
+    let currentPath = process.cwd(),
+        rootDir = path.join(currentPath,"./out"),
         dataDir = path.join(rootDir,"/essentialcommands")
     if (!existsSync(rootDir)){
         mkdirSync(rootDir);
