@@ -1,7 +1,7 @@
 
 ## Getting started
 
-This Script is for convert homes and warps from minecraft HuskHomes mod to Essential-Commands.
+This script is used to convert homes and warps from Minecraft HuskHomes mod to Essential-Commands.
 
 ```console
   npx L-IGH-T/HuskHomes-to-Essential-Commands
