@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const {existsSync, readdirSync, readFileSync, mkdirSync,writeFileSync} = require('fs'),
     path = require('path'),
     zlib = require('zlib'),
