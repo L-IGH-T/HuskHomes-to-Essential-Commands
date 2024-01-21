@@ -17,18 +17,18 @@ class Data{
         const db = new sqlite.Database(paths.huskHomeDB)
         db.serialize(()=>{
             this.Players.forEach((e)=>{
-                console.log("\n\nPlayer: "+e.fileName+":\n")
+                console.log("Player: "+e.fileName+":")
                 let homes = this.#getData(db,this.#sqlPlayer.replace("::playerID::",e.fileName))
                 if(homes.length > 0)
                 {
-                    console.log("\x1b[32mPlayer has "+homes.length+" homes\x1b[0m\n"); 
+                    console.log("\x1b[32mThis player has "+homes.length+" homes\x1b[0m\n"); 
                     homes.map((h)=>{
                         e.addHome(h)
                     })
                 }
                 else
                 {
-                    console.log("\x1b[31mPlayer do not have Homes\x1b[0m\n"); 
+                    console.log("\x1b[31mThis player has no home.\x1b[0m\n"); 
                 }
             })
             this.#createWarps(this.#getData(db,this.#sqlWorld))

@@ -17,7 +17,7 @@ const Data = new DataUtil();
 
 do {
     paths.world = path.normalize(prompt("Path to Minecraft world: "));
-    console.log('\nPath is:','\x1b[33m'+paths.world+'\x1b[0m\n');
+    console.log('\nPath is:','\x1b[33m'+paths.world+'\x1b[0m');
 } while (!checkPath(["","../world","/world"],paths));
 
 // Get player UUID and file name
@@ -31,7 +31,7 @@ files.forEach(file => {
 });
     
 
-//Check if HuskHomes database file exist in server files
+//Check if HuskHomes database file exist in server folder
 if(!checkHuskHomes())
 {
     do {
@@ -43,11 +43,11 @@ if(!checkHuskHomes())
 Data.Db(paths);
 
 
-//Save data for players
+//Save data for a users
 Data.Players.map((e)=>{
     if(Object.keys(e.homes).length >0)
     {
-        console.log("Saving data player's id:\x1b[32m"+e.fileName+"\x1b[0m")
+        console.log("Saving data for a user with ID:\x1b[32m"+e.fileName+"\x1b[0m")
         saveFilePlayer(e)
     }
 })
@@ -80,6 +80,7 @@ function saveFilePlayer(player)
 saveFileWorld(Data.World)
 function saveFileWorld(world)
 {
+    console.log("\x1b[32mSaving data of world(warps)\x1b[0m")
     let currentPath = process.cwd(),
         rootDir = path.join(currentPath,"./out"),
         dataDir = path.join(rootDir,"/essentialcommands")
@@ -97,6 +98,17 @@ function saveFileWorld(world)
         value:{data:world}
     })
     writeFileSync(path.join(dataDir,"world_data.dat"),  zlib.gzipSync(Buffer.from(writer)));
+
+    console.log('');
+    console.log('');
+    console.log('');
+    console.log('');
+    console.log("\x1b[32mThe data has been saved successfully.\x1b[0m")
+    console.log(' \x1b[33m Look for folder: \x1b[34m ./out \x1b[0m All data should be stored there.');
+    console.log('\x1b[36mCopy the contents of that folder to the server\x1b[32m world\x1b[36m folder.\x1b[0m');
+    console.log('');
+    console.log('');
+    process.exit(1);
 }
 
 //Functions
