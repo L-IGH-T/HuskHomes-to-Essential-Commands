@@ -3,6 +3,9 @@
 
 This script is used to convert homes and warps from Minecraft HuskHomes mod to Essential-Commands.
 
+First install node.js, then run this line in console
+
+!!!! "out" folder will be created in the directory where the script was run, so make sure where you open the console !!!!
 ```console
   npx L-IGH-T/HuskHomes-to-Essential-Commands
 ```
